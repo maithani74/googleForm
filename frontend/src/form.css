@@ -1,0 +1,95 @@
+body{
+    background: rgba(241,235,249,255);
+}
+.container{
+    margin-bottom: 100px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.about{
+    margin-top: 10px;
+    background-color:#fffefe;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.mcq{
+    padding: 30px;
+    margin-top: 10px;
+    background-color:white;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+}
+h6{
+    padding-top: 4px;
+    margin-left: 6px;
+    font-weight: 400;
+}
+
+.checkbox{
+    margin-top: 10px;
+    background-color:white;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.shortans{
+    background-color:white;
+    margin-top: 10px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.paragraph{
+    background-color:white;
+    margin-top: 10px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.dropdown{
+    background-color:white;
+    margin-top: 10px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.linearscale{
+    background-color:white;
+    margin-top: 12px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+button{
+    background-color: purple;
+    color: white;
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.submit{
+    margin-right: 440px;
+}
+.clear{
+    background: rgba(241,235,249,255);
+    border: 0px;
+    color: black;
+}
