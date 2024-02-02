@@ -12,84 +12,210 @@ body{
     margin-top: 10px;
     background-color:#fffefe;
     width: 600px;
-    height: 200px;
-    border: 1px solid black;
+    height: 250px;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
+
+.about .color{
+    height: 10px ;
+    width: 100%;
+    background-color: rgba(112,70,188,255);
+    border-radius: 5px;
+}
+.about h2{
+    padding: 5px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+.about p{
+    margin-left: 15px;
+    font-weight: 400;
+}
+.about .top{
+    display: flex;
+    flex-direction: row;
+}
+
+.about .p{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+
+/*  */
 .mcq{
     padding: 30px;
     margin-top: 10px;
     background-color:white;
     width: 600px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
 
-.option{
-    display: flex;
-    flex-direction: row;
-}
-h6{
-    padding-top: 4px;
-    margin-left: 6px;
-    font-weight: 400;
+
+
+.mcq input{
+    margin-right: 8px;
+    margin-top: 15px;
 }
 
+/*  */
 .checkbox{
+    padding: 30px;
     margin-top: 10px;
     background-color:white;
     width: 600px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
+
+
+.checkbox input{
+    margin-right: 8px;
+    margin-top: 15px;
+}
+
+
+/*  */
 .shortans{
+    padding: 30px;
     background-color:white;
     margin-top: 10px;
     width: 600px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
+
+.shortans input{
+    margin-top: 20px;
+    width: 100%;
+    border:none;
+    border-bottom: 3px solid #e3e2e2;
+    outline: none;
+    background:transparent;
+    overflow: visible;
+    font-size: 18px;
+
+}
+
+
+/*  */
 .paragraph{
+    padding: 30px;
     background-color:white;
     margin-top: 10px;
     width: 600px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
+
+.paragraph input{
+    margin-top: 20px;
+    width: 100%;
+    border:none;
+    border-bottom: 3px solid #e3e2e2;
+    outline: none;
+    background:transparent;
+    overflow: visible;
+    font-size: 18px;
+}
+/*  */
 .dropdown{
+    padding: 30px;
     background-color:white;
     margin-top: 10px;
     width: 600px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
+
+.dropdown ul{
+    list-style: none;
+    /* text-align: center; */
+    margin: 0px;
+    padding: 0px;
+    /* position: relative; */
+}
+.dropdown ul ul li{
+    
+    display: block;
+    width: auto;
+    position: relative;
+    z-index: 999;
+    display: none;
+}
+
+.dropdown ul:hover li{
+    display: block;
+}
+
+
+.dropdown button{
+    /* margin: 30px; */
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    background-color: white;
+    border:    1px solid rgb(214, 210, 210);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+
+/*  */
 .linearscale{
+    padding: 30px;
     background-color:white;
     margin-top: 12px;
     width: 600px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
 
-button{
-    background-color: purple;
+.linearscale .options{
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+
+}
+.linearscale .options label{
+    display: block;
+    margin-left: 45px;
+    margin-right: 20px;
+}
+.linearscale .options input{
+    margin-left: 45px;
+    margin-top: 20px;
+}
+.linearscale p{
+    margin-left: 20px;
+}
+/*  */
+/* .buttons button{
+    background-color: rgba(112,70,188,255);
+    color: white;
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 10px;
+} */
+
+.submit{
+    margin-right: 440px;
+    background-color: rgba(112,70,188,255);
     color: white;
     margin-top: 5px;
     height: 40px;
     border-radius: 10px;
 }
-
-.submit{
-    margin-right: 440px;
-}
 .clear{
-    background: rgba(241,235,249,255);
+    background-color: rgba(241,235,249,255);
     border: 0px;
-    color: black;
+    color: rgba(112,70,188,255);
 }
