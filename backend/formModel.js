@@ -1,23 +1,25 @@
 const mongoose=require("mongoose")
 
 const formSchema = new mongoose.Schema({
-    mcq:{
-        type:String,
-    },
     checkbox:{
         type:String,
+        required:true,
     },
     shortans:{
         type:String,
+        required:true,
     },
     paragraph:{
         type:String,
+        required:true,
     },
     dropdown:{
         type:String,
+        required:true,
     },
     linearscale:{
-        type:Number
+        type:Number,
+        required:true,
     },
 },{timestamps:true})
 

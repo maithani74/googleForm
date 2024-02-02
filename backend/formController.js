@@ -2,7 +2,7 @@ const { formModel } = require("./formModel");
 
 exports.formController = async(req,res)=>{
     try {
-        const {mcq,shortans,linearscale,paragraph,checkbox,dropdown} = req.body;
+        const {checkbox,shortans,paragraph,dropdown,linearscale} = req.body;
         const form = new formModel({...req.body});
         await form.save();
         res.status(201).send({

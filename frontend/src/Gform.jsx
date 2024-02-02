@@ -3,24 +3,43 @@ import "./form.css";
 import { Checkbox } from "antd";
 import Link from "antd/es/typography/Link";
 import image from "./icons8-cloud-50.png";
+import axios from "axios";
 const Gform = () => {
-  const [mcq, setMcq] = useState();
-  const [checkbox, setCheckbox] = useState();
-  const [shortans, setShortans] = useState();
-  const [longans, setLongans] = useState();
-  const [dropdowns, setDropdowns] = useState();
+  const [checkbox, setCheckbox] = useState("");
+  const [shortans, setShortans] = useState("");
+  const [paragraph, setparagraph] = useState("");
+  const [dropdown, setdropdown] = useState("");
   const [linearscale, setLinearscale] = useState();
-  console.log(linearscale);
-  const handleSubmit =async()=>{
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      
+      const data = await axios.post("http://localhost:8080/api/v1/form", {
+        checkbox,
+        shortans,
+        paragraph,
+        dropdown,
+        linearscale,
+      });
+      if (data?.success) {
+        console.log("Successs");
+      }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
+
+  const handleClear = () => {
+   setCheckbox("")
+   setLinearscale(0);
+   setShortans("");
+   setdropdown("");
+   setparagraph("");
+   console.log(linearscale);
+  };
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form noValidate onSubmit={handleSubmit}>
         <div className="container">
           <div className="about">
             <div className="color"></div>
@@ -47,46 +66,14 @@ const Gform = () => {
               * Indicates required question
             </h6>
           </div>
-          <div className="mcq">
-            <h5>MCQ</h5>
-            <div className="">
-              <input
-                type="radio"
-                value="option 1"
-                onChange={(e) => setMcq(e.target.value)}
-                name="rahul"
-                id=""
-              />
-              <label>Option 1</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="option 2"
-                onChange={(e) => setMcq(e.target.value)}
-                name="rahul"
-                id=""
-              />
-              <label>Option 1</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="option 3"
-                onChange={(e) => setMcq(e.target.value)}
-                name="rahul"
-                id=""
-              />
-              <label>Option 1</label>
-            </div>
-          </div>
+
           {/* checkbox  */}
           <div className="checkbox">
             <h5>Checkbox</h5>
             <div className="">
               <input
                 type="radio"
-                value="option 1"
+                value="Option 1"
                 onChange={(e) => setCheckbox(e.target.value)}
                 name="rahul"
                 id=""
@@ -96,7 +83,7 @@ const Gform = () => {
             <div>
               <input
                 type="radio"
-                value="option 2"
+                value="Option 2"
                 onChange={(e) => setCheckbox(e.target.value)}
                 name="rahul"
                 id=""
@@ -131,8 +118,8 @@ const Gform = () => {
             <h5>Paragraph</h5>
             <input
               placeholder="Your Answer"
-              value={longans}
-              onChange={(e) => setLongans(e.target.value)}
+              value={paragraph}
+              onChange={(e) => setparagraph(e.target.value)}
               type="text"
               name=""
               id=""
@@ -140,19 +127,19 @@ const Gform = () => {
           </div>
 
           <div className="dropdown">
-            <h5>Dropdowns</h5>
-            <button value={dropdowns}>
+            <h5>dropdown</h5>
+            <div value={dropdown} style={{ width: "100px" }}>
               <ul>
                 <li>
-                  {dropdowns ? dropdowns : " Choose  "} 🔽
+                  {dropdown ? dropdown : " Choose  "} 🔽
                   <ul>
-                    <li onClick={() => setDropdowns("option 1")}>option 1</li>
-                    <li onClick={() => setDropdowns("option 2")}>option 2</li>
-                    <li onClick={() => setDropdowns("option 3")}>option 3</li>
+                    <li onClick={() => setdropdown("option 1")}>option 1</li>
+                    <li onClick={() => setdropdown("option 2")}>option 2</li>
+                    <li onClick={() => setdropdown("option 3")}>option 3</li>
                   </ul>
                 </li>
               </ul>
-            </button>
+            </div>
           </div>
           <div className="linearscale">
             <h5>Linear Scale</h5>
@@ -164,7 +151,7 @@ const Gform = () => {
                   type="radio"
                   value={1}
                   onChange={(e) => setLinearscale(e.target.value)}
-                  name="rahul"
+                  name="rahul1"
                   id=""
                 />
               </div>
@@ -175,7 +162,7 @@ const Gform = () => {
                   type="radio"
                   value={2}
                   onChange={(e) => setLinearscale(e.target.value)}
-                  name="rahul"
+                  name="rahul1"
                   id=""
                 />
               </div>
@@ -185,7 +172,7 @@ const Gform = () => {
                   type="radio"
                   value={3}
                   onChange={(e) => setLinearscale(e.target.value)}
-                  name="rahul"
+                  name="rahul1"
                   id=""
                 />
               </div>
@@ -195,7 +182,7 @@ const Gform = () => {
                   type="radio"
                   value={4}
                   onChange={(e) => setLinearscale(e.target.value)}
-                  name="rahul"
+                  name="rahu1"
                   id=""
                 />
               </div>
@@ -205,7 +192,7 @@ const Gform = () => {
                   type="radio"
                   value={5}
                   onChange={(e) => setLinearscale(e.target.value)}
-                  name="rahul"
+                  name="rahul1"
                   id=""
                 />
               </div>
@@ -213,8 +200,12 @@ const Gform = () => {
             </div>
           </div>
           <div className="buttons">
-            <button className="submit">Submit</button>
-            <button className="clear">Clear Form</button>
+            <button type="submit" className="submit">
+              Submit
+            </button>
+            <button onClick={()=>handleClear} className="clear">
+              Clear Form
+            </button>
           </div>
         </div>
       </form>
