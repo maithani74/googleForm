@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./form.css";
 import { Checkbox } from "antd";
 import Link from "antd/es/typography/Link";
 import image from "./icons8-cloud-50.png";
 import axios from "axios";
 const Gform = () => {
+  const navigate = useNavigate()
   const [checkbox, setCheckbox] = useState("");
   const [shortans, setShortans] = useState("");
   const [paragraph, setparagraph] = useState("");
@@ -20,9 +22,7 @@ const Gform = () => {
         dropdown,
         linearscale,
       });
-      if (data?.success) {
-        console.log("Successs");
-      }
+      navigate("/success")
     } catch (error) {
       console.log(error);
     }

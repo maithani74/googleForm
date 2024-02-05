@@ -219,3 +219,39 @@ body{
     border: 0px;
     color: rgba(112,70,188,255);
 }
+
+/*  */
+
+.abouts{
+    margin-top: 10px;
+    background-color:#fffefe;
+    width: 600px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+}
+
+.abouts .color{
+    height: 10px ;
+    width: 100%;
+    background-color: rgba(112,70,188,255);
+    border-radius: 5px;
+}
+.abouts h2{
+    padding: 5px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+.abouts p{
+    margin-left: 15px;
+    font-weight: 400;
+}
+.abouts .top{
+    display: flex;
+    flex-direction: row;
+}
+
+.abouts .p{
+    font-weight: 400;
+    font-size: 15px;
+}
